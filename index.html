@@ -209,57 +209,6 @@
       font-size: 0.82rem;
     }
 
-    /* 主视觉区高科技悬浮微型芯片 */
-    .hero-float-chip {
-      position: absolute;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 18px;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(226, 232, 240, 0.9);
-      border-radius: var(--radius-md);
-      box-shadow: 0 12px 28px -5px rgba(37, 99, 235, 0.14);
-      z-index: 2;
-      pointer-events: none;
-      text-align: left;
-    }
-    .chip-left {
-      top: 130px;
-      left: 5%;
-      animation: floatChip1 5s infinite ease-in-out alternate;
-    }
-    .chip-right {
-      top: 170px;
-      right: 5%;
-      animation: floatChip2 6s infinite ease-in-out alternate;
-    }
-    @keyframes floatChip1 {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-15px); }
-    }
-    @keyframes floatChip2 {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(15px); }
-    }
-    .chip-icon {
-      font-size: 1.6rem;
-    }
-    .hero-float-chip strong {
-      display: block;
-      font-size: 0.92rem;
-      color: var(--text-main);
-    }
-    .hero-float-chip small {
-      display: block;
-      font-size: 0.78rem;
-      color: var(--text-dim);
-    }
-    @media (max-width: 1024px) {
-      .hero-float-chip { display: none; }
-    }
 
     .hero-pill {
       position: relative;
@@ -1132,20 +1081,6 @@
   <!-- 主视觉区 (Hero) -->
   <section class="hero">
     <div class="hero-bg-glow"></div>
-    <div class="hero-float-chip chip-left">
-      <span class="chip-icon">⚡</span>
-      <div>
-        <strong>4K/8K 毫秒专线</strong>
-        <small>IPLC 内网直连 · 0 缓冲</small>
-      </div>
-    </div>
-    <div class="hero-float-chip chip-right">
-      <span class="chip-icon">🤖</span>
-      <div>
-        <strong>AI 智能路由调度</strong>
-        <small>ChatGPT / Claude 秒级直连</small>
-      </div>
-    </div>
     <div class="container">
       <div class="ai-status-badge">
         <span class="ai-pulse-dot"></span>
@@ -1546,17 +1481,7 @@
         });
       }, { passive: true });
 
-      // 全球专线核心节点 HUD 遥测数据
-      const hudNodeConfigs = [
-        { name: 'HKG-IPLC', basePing: 11 },
-        { name: 'SGP-CORE', basePing: 22 },
-        { name: 'TYO-FAST', basePing: 31 },
-        { name: 'LAX-PREMIUM', basePing: 105 },
-        { name: 'FRA-GLOBAL', basePing: 118 },
-        { name: 'AI-CLUSTER', basePing: 14 }
-      ];
-
-      // 高科技网络节点类
+      // 高科技网络节点类 (纯净流光节点，无杂乱文字标签)
       class NetworkNode {
         constructor(index) {
           this.index = index;
@@ -1580,16 +1505,6 @@
           this.color = colorList[Math.floor(Math.random() * colorList.length)];
           this.rippleRadius = 0;
           this.rippleAlpha = 0;
-
-          // 挑选前 6 个作为带有 HUD 遥测标签的骨干中继
-          this.isHud = this.index < 6;
-          if (this.isHud) {
-            this.hudConfig = hudNodeConfigs[this.index];
-            this.radius = 4.2;
-            this.color = colorList[0];
-            this.ping = this.hudConfig.basePing;
-            this.lastPingUpdate = Date.now();
-          }
         }
         update() {
           this.x += this.vx;
@@ -1601,12 +1516,6 @@
           if (this.x > width - 12) { this.x = width - 12; this.vx *= -1; }
           if (this.y < 12) { this.y = 12; this.vy *= -1; }
           if (this.y > height - 12) { this.y = height - 12; this.vy *= -1; }
-
-          // HUD 节点模拟微小网络抖动
-          if (this.isHud && Date.now() - this.lastPingUpdate > 2400) {
-            this.ping = Math.max(8, this.hudConfig.basePing + Math.floor((Math.random() - 0.5) * 3));
-            this.lastPingUpdate = Date.now();
-          }
 
           // 鼠标近距离磁性引力交互
           if (mouse.active) {
@@ -1645,7 +1554,7 @@
         }
         draw() {
           const pulse = Math.sin(this.pulsePhase) * 0.25 + 0.75;
-          const r = this.radius * (this.isHud ? (pulse * 0.2 + 0.9) : pulse);
+          const r = this.radius * pulse;
 
           // 节点发光光晕
           ctx.beginPath();
@@ -1669,41 +1578,6 @@
             ctx.strokeStyle = 'rgba(6, 182, 212, ' + this.rippleAlpha + ')';
             ctx.lineWidth = 1.4;
             ctx.stroke();
-          }
-
-          // 绘制全球骨干节点 HUD 标签卡片
-          if (this.isHud) {
-            const badgeW = 104;
-            const badgeH = 22;
-            const badgeX = this.x + 12;
-            const badgeY = this.y - 11;
-
-            if (badgeX + badgeW < width) {
-              ctx.beginPath();
-              ctx.roundRect(badgeX, badgeY, badgeW, badgeH, 6);
-              ctx.fillStyle = 'rgba(255, 255, 255, 0.92)';
-              ctx.fill();
-              ctx.strokeStyle = 'rgba(37, 99, 235, 0.45)';
-              ctx.lineWidth = 1;
-              ctx.stroke();
-
-              // 绿色闪烁状态圆点
-              ctx.beginPath();
-              ctx.arc(badgeX + 9, badgeY + 11, 3.5, 0, Math.PI * 2);
-              ctx.fillStyle = '#10B981';
-              ctx.shadowColor = '#10B981';
-              ctx.shadowBlur = 6;
-              ctx.fill();
-              ctx.shadowBlur = 0;
-
-              // 节点文字与延时
-              ctx.font = '600 10px SFMono-Regular, Consolas, Monaco, monospace';
-              ctx.fillStyle = '#1E293B';
-              ctx.fillText(this.hudConfig.name, badgeX + 17, badgeY + 14);
-
-              ctx.fillStyle = '#2563EB';
-              ctx.fillText(this.ping + 'ms', badgeX + 76, badgeY + 14);
-            }
           }
         }
       }
