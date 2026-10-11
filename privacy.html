@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>隐私政策 - OuO 严格零日志隐私保护声明</title>
+  <meta name="description" content="OuO 隐私政策：我们郑重承诺严格执行“无日志（No-Logs）”政策，绝不记录、存储或分析任何用户的浏览历史与网络传输内容。">
+  <style>
+    :root {
+      --bg-main: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --border-color: #E2E8F0;
+      --primary: #2563EB;
+      --primary-gradient: linear-gradient(135deg, #2563EB 0%, #4F46E5 55%, #7C3AED 100%);
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --radius-md: 14px;
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      padding: 40px 20px 80px;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .back-nav {
+      margin-bottom: 30px;
+    }
+    .back-nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .back-nav a:hover { text-decoration: underline; }
+    .header-box {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 24px;
+    }
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 850;
+      margin-bottom: 12px;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .lead {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+    .section-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 34px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 750;
+      color: var(--text-main);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      margin-bottom: 14px;
+    }
+    p:last-child { margin-bottom: 0; }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 10px;
+    }
+    li {
+      color: var(--text-muted);
+      padding: 7px 0;
+      font-size: 0.96rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    li::before {
+      content: "🛡️";
+      font-size: 0.95rem;
+    }
+    .highlight-box {
+      background: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 16px;
+      color: #065F46;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+    .highlight-box strong {
+      color: #047857;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="back-nav">
+      <a href="index.html">← 返回 OuO 首页</a>
+    </div>
+
+    <div class="header-box">
+      <h1>隐私政策 (Privacy Policy)</h1>
+      <p class="lead">保护您的个人网络隐私与通信安全是 OuO 的首要准则。我们在此公开声明我们的数据处理机制与坚定不移的“零日志”原则。</p>
+    </div>
+
+    <!-- 零日志核心承诺 -->
+    <div class="section-block">
+      <h2>🔒 坚定不移的“零日志（No-Logs）”承诺</h2>
+      <p>OuO 庄严承诺：<strong>我们绝不记录、收集、存储或向任何第三方出售用户的任何网络使用日志与活动轨迹。</strong></p>
+      
+      <p>具体而言，我们<strong>绝不记录</strong>以下任何信息：</p>
+      <ul>
+        <li><strong>不记录用户的源真实 IP 地址</strong>；</li>
+        <li><strong>不记录您访问过的任何网站网址（URL）或域名解析（DNS 查询）记录</strong>；</li>
+        <li><strong>不记录您传输或下载的任何数据包内容、通信明文或文件</strong>；</li>
+        <li><strong>不记录您的会话起止连接时间戳</strong>。</li>
+      </ul>
+
+      <div class="highlight-box">
+        <strong>技术架构保障：</strong> 我们的所有专线节点中继服务器均采用<strong>纯内存（RAM-only）运行模式</strong>，系统不配备持久化日志记录驱动，一旦服务器重启或进程重置，所有瞬时会话缓存立即物理抹除，从底层技术层面杜绝任何数据泄露的可能。
+      </div>
+    </div>
+
+    <!-- 仅收集的必要信息 -->
+    <div class="section-block">
+      <h2>📋 仅保留的必要服务信息</h2>
+      <p>为了保障账号的基本可用性及防止滥用，我们仅在用户注册和计费系统层面保留最少限度的非敏感信息：</p>
+      <ul>
+        <li><strong>注册电子邮箱</strong>：仅用于账号登录、密码找回以及接收重要的系统维护通知。</li>
+        <li><strong>套餐流量使用总量</strong>：仅统计当前计费周期内已消耗的总流量字节数，用于流量配额结算，不包含任何流量内容的明细信息。</li>
+        <li><strong>同时在线设备数</strong>：仅用于并发连接数校验，会话断开后立即释放。</li>
+      </ul>
+    </div>
+
+    <!-- 数据安全与加密 -->
+    <div class="section-block">
+      <h2>🛡️ 端到端高强度传输加密</h2>
+      <p>所有经过 OuO 隧道的用户流量均经过工业级 AES-256-GCM 或 ChaCha20-Poly1305 高强度算法加密。即使在不安全的公共 Wi-Fi 网络或易受监听的中间路由节点上，攻击者与运营商也只能看到无意义的加密字符，无法破译您的真实通信内容。</p>
+    </div>
+
+    <!-- 政策更新 -->
+    <div class="section-block">
+      <h2>📑 政策的更新与联系</h2>
+      <p>我们可能会适时更新本隐私声明以符合全球网络安全标准的演进。更新将直接在此页面生效公布。如您对本隐私政策有任何疑问，请随时在后台提交工单与我们取得联系。</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网站地图 - OuO 官方站点导航</title>
+  <meta name="description" content="OuO 网站地图，包含全站核心页面导航、功能模块索引与服务页面直达。">
+  <style>
+    :root {
+      --bg-main: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --border-color: #E2E8F0;
+      --primary: #2563EB;
+      --primary-gradient: linear-gradient(135deg, #2563EB 0%, #4F46E5 55%, #7C3AED 100%);
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --radius-md: 14px;
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      padding: 40px 20px 80px;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .back-nav {
+      margin-bottom: 30px;
+    }
+    .back-nav a {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .back-nav a:hover { text-decoration: underline; }
+    .header-box {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 24px;
+    }
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 850;
+      margin-bottom: 12px;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .lead {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+    .section-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 34px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 750;
+      color: var(--text-main);
+      margin-bottom: 18px;
+    }
+    .map-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 600px) {
+      .map-grid { grid-template-columns: 1fr; }
+    }
+    .map-link-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 18px 20px;
+      transition: all 0.2s ease;
+      display: block;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+    }
+    .map-link-card:hover {
+      background: #F8FAFC;
+      border-color: #BFDBFE;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+    }
+    .map-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+    .map-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="back-nav">
+      <a href="index.html">← 返回 OuO 首页</a>
+    </div>
+
+    <div class="header-box">
+      <h1>网站地图 (Sitemap)</h1>
+      <p class="lead">OuO 官方全站页面与内容索引总览，快速定位您所需的信息与服务。</p>
+    </div>
+
+    <!-- 核心板块导航 -->
+    <div class="section-block">
+      <h2>🏠 核心页面与功能导航</h2>
+      <div class="map-grid">
+        <a href="index.html" class="map-link-card">
+          <div class="map-title">🚀 官方首页</div>
+          <div class="map-desc">OuO 网络加速器官方门户与主视觉展示</div>
+        </a>
+        <a href="index.html#pricing" class="map-link-card">
+          <div class="map-title">💎 套餐与价格对比表</div>
+          <div class="map-desc">基础轻量版、旗舰进阶版与尊享年度方案</div>
+        </a>
+        <a href="index.html#features" class="map-link-card">
+          <div class="map-title">⚡ 核心产品优势</div>
+          <div class="map-desc">IPLC 专线、低延时与军工级加密特性</div>
+        </a>
+        <a href="index.html#showcase" class="map-link-card">
+          <div class="map-title">🤖 多媒体与 AI 支持</div>
+          <div class="map-desc">ChatGPT、Claude、Netflix、YouTube 赋能</div>
+        </a>
+        <a href="index.html#testimonials" class="map-link-card">
+          <div class="map-title">⭐ 用户真实意见与评价</div>
+          <div class="map-desc">来自开发者、博主与跨国卖家的口碑反馈</div>
+        </a>
+        <a href="index.html#faq" class="map-link-card">
+          <div class="map-title">❓ 常见问题解答</div>
+          <div class="map-desc">设备支持、高峰期网络表现与配置指引</div>
+        </a>
+        <a href="consult-f8a3.html" class="map-link-card">
+          <div class="map-title">🎯 推荐咨询与选型指南</div>
+          <div class="map-desc">核心业务场景选型、节点搭配与客户端上手</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 技术专栏与评测文章 -->
+    <div class="section-block">
+      <h2>📚 2026 技术专栏与评测文章索引</h2>
+      <div class="map-grid">
+        <a href="ouo-review-k8f2.html" class="map-link-card">
+          <div class="map-title">OuO 专线网络深度测评</div>
+          <div class="map-desc">IPLC 架构实测与 Clash 一键配置全指南</div>
+        </a>
+        <a href="clash-nodes-7x9m.html" class="map-link-card">
+          <div class="map-title">Clash Verge 配置教程</div>
+          <div class="map-desc">从零掌握高速节点订阅与规则分流技巧</div>
+        </a>
+        <a href="airport-speed-m4p1.html" class="map-link-card">
+          <div class="map-title">机场推荐避坑与专线对比</div>
+          <div class="map-desc">IPLC 与 BGP 中继性能差异及晚高峰测速</div>
+        </a>
+        <a href="chatgpt-clash-3v8k.html" class="map-link-card">
+          <div class="map-title">ChatGPT & Claude 原生解锁</div>
+          <div class="map-desc">纯净双 ISP 住宅出口挑选与防风控策略</div>
+        </a>
+        <a href="streaming-4k-9d2w.html" class="map-link-card">
+          <div class="map-title">4K/8K 流媒体极清播放指南</div>
+          <div class="map-desc">Netflix 与 Disney+ 跨区解锁及电视盒子配置</div>
+        </a>
+        <a href="singbox-clash-6t1q.html" class="map-link-card">
+          <div class="map-title">Sing-box 与 Clash 内核对比</div>
+          <div class="map-desc">Shadowsocks、VLESS 及 Hysteria 2 选型</div>
+        </a>
+        <a href="cross-border-8j3c.html" class="map-link-card">
+          <div class="map-title">跨境电商与外贸出海利器</div>
+          <div class="map-desc">TikTok 与多环境店铺防关联实战指南</div>
+        </a>
+        <a href="ios-android-5y7b.html" class="map-link-card">
+          <div class="map-title">移动端极速冲浪攻略</div>
+          <div class="map-desc">小火箭 Shadowrocket 与手机端 Clash 调优</div>
+        </a>
+        <a href="gamer-lowlatency-2n9x.html" class="map-link-card">
+          <div class="map-title">外服游戏低延迟加速特辑</div>
+          <div class="map-desc">抖动抑制与 Clash TUN 虚拟网卡实战</div>
+        </a>
+        <a href="security-privacy-4w8h.html" class="map-link-card">
+          <div class="map-title">网络隐私与零日志解析</div>
+          <div class="map-desc">纯内存无盘架构与 DNS 防泄露教程</div>
+        </a>
+        <a href="mac-remote-work-7c4l.html" class="map-link-card">
+          <div class="map-title">Mac 远程办公与开发者提速</div>
+          <div class="map-desc">终端代理环境配置与跨国视讯流畅保障</div>
+        </a>
+        <a href="budget-value-1k6z.html" class="map-link-card">
+          <div class="map-title">高性价比平价选购攻略</div>
+          <div class="map-desc">计费模型剖析与长期订阅避坑指南</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 法律与官方信息 -->
+    <div class="section-block">
+      <h2>📜 品牌政策与服务条款</h2>
+      <div class="map-grid">
+        <a href="about.html" class="map-link-card">
+          <div class="map-title">💡 关于我们 (About Us)</div>
+          <div class="map-desc">品牌介绍、服务理念、节点覆盖与客服支持</div>
+        </a>
+        <a href="terms.html" class="map-link-card">
+          <div class="map-title">⚖️ 服务条款 (Terms of Service)</div>
+          <div class="map-desc">用户规范、禁止事项与官方免责声明</div>
+        </a>
+        <a href="privacy.html" class="map-link-card">
+          <div class="map-title">🔒 隐私政策 (Privacy Policy)</div>
+          <div class="map-desc">严格执行的“零日志”承诺与隐私保护技术</div>
+        </a>
+        <a href="https://koolykh88.flashleapaff.com/#/?code=6kHcdCND" class="map-link-card" rel="nofollow" target="_blank">
+          <div class="map-title">🌐 官方登录与注册门户</div>
+          <div class="map-desc">直达用户控制面板与高速节点订阅</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OuO - 极速稳定的企业级网络加速器 | 畅联全球 AI 与 8K 极清流媒体</title>
+  <meta name="description" content="OuO 为您提供极速稳定的全球网络专线加速服务。全节点支持 ChatGPT、Claude 及 4K/8K Netflix、YouTube 解锁，零日志隐私保护，全平台极简客户端，畅享无界数字互联。">
+  <meta name="keywords" content="OuO, 网络加速器, 专线代理, IPLC专线, ChatGPT加速, 流媒体解锁, 跨境出海">
+  <style>
+    /* ========== 全局浅色风格变量 ========== */
+    :root {
+      --bg-main: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #FFFFFF;
+      --bg-subtle: #F1F5F9;
+      --border-color: #E2E8F0;
+      --border-focus: #3B82F6;
+      --primary: #2563EB;
+      --primary-hover: #1D4ED8;
+      --primary-gradient: linear-gradient(135deg, #2563EB 0%, #4F46E5 55%, #7C3AED 100%);
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --text-dim: #64748B;
+      --tag-bg: #EFF6FF;
+      --tag-border: #BFDBFE;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 14px 30px -4px rgba(37, 99, 235, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      --container-w: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========== 顶部导航栏 ========== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .logo-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #2563EB;
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      padding: 2px 8px;
+      border-radius: 20px;
+      -webkit-text-fill-color: #2563EB;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 22px;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+    }
+
+    /* ========== 主视觉区 (Hero Section) ========== */
+    .hero {
+      position: relative;
+      padding: 96px 0 76px;
+      text-align: center;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% -20%, #EFF6FF 0%, #F8FAFC 70%);
+    }
+
+    .hero-bg-glow {
+      position: absolute;
+      top: -160px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 850px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(191, 219, 254, 0.45) 0%, rgba(224, 231, 255, 0.25) 45%, rgba(248, 250, 252, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-pill {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border: 1px solid var(--tag-border);
+      color: #1D4ED8;
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-pill-dot {
+      width: 8px;
+      height: 8px;
+      background: #10B981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #10B981;
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 3.5rem;
+      font-weight: 850;
+      line-height: 1.18;
+      letter-spacing: -1px;
+      color: var(--text-main);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      position: relative;
+      z-index: 1;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 36px;
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 54px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 34px;
+      background: var(--primary-gradient);
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.38);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      font-size: 1.05rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-outline:hover {
+      background: #F8FAFC;
+      border-color: #CBD5E1;
+      color: var(--primary);
+    }
+
+    .hero-stats {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding-top: 28px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .stat-item h3 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .stat-item p {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      margin: 0;
+      font-weight: 500;
+    }
+
+    /* ========== 通用章节头部 ========== */
+    .section-head {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+
+    .section-head h2 {
+      font-size: 2.3rem;
+      font-weight: 850;
+      color: var(--text-main);
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ========== 核心优势 ========== */
+    .features-section {
+      padding: 85px 0;
+      border-top: 1px solid var(--border-color);
+      background: #F8FAFC;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .feature-card:hover {
+      border-color: #BFDBFE;
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      background: #EFF6FF;
+      border: 1px solid #DBEAFE;
+    }
+
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-size: 0.94rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ========== 流媒体与 AI 支持专区 ========== */
+    .showcase-section {
+      padding: 85px 0;
+      border-top: 1px solid var(--border-color);
+      background: #FFFFFF;
+    }
+
+    .showcase-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .showcase-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+    }
+
+    .showcase-box:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: #CBD5E1;
+    }
+
+    .showcase-box h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .showcase-box p {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+      margin-bottom: 24px;
+    }
+
+    .badge-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: #F1F5F9;
+      border: 1px solid #E2E8F0;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .showcase-feature-list {
+      list-style: none;
+      margin-bottom: 26px;
+    }
+
+    .showcase-feature-list li {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .showcase-feature-list li::before {
+      content: "✓";
+      color: #10B981;
+      font-weight: bold;
+    }
+
+    /* ========== 价格套餐对比表 ========== */
+    .pricing-section {
+      padding: 85px 0;
+      border-top: 1px solid var(--border-color);
+      background: #FFFFFF;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .pricing-card {
+      position: relative;
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pricing-card:hover {
+      border-color: #CBD5E1;
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .pricing-card.popular {
+      background: #FFFFFF;
+      border: 2px solid #4F46E5;
+      box-shadow: 0 12px 30px rgba(79, 70, 229, 0.12);
+    }
+
+    .popular-tag {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary-gradient);
+      color: #fff;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 4px 18px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+    }
+
+    .plan-header {
+      margin-bottom: 24px;
+    }
+
+    .plan-name {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .plan-desc {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+
+    .plan-price {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 28px;
+    }
+
+    .currency {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .amount {
+      font-size: 3rem;
+      font-weight: 850;
+      color: var(--text-main);
+      line-height: 1;
+    }
+
+    .period {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .plan-features {
+      list-style: none;
+      margin-bottom: 32px;
+      flex-grow: 1;
+    }
+
+    .plan-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      padding: 10px 0;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .plan-features li:last-child {
+      border-bottom: none;
+    }
+
+    .plan-features li .check {
+      color: #2563EB;
+      font-weight: 700;
+    }
+
+    .btn-plan {
+      width: 100%;
+      padding: 13px;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+      display: block;
+      transition: var(--transition);
+      background: #F8FAFC;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-plan:hover {
+      background: #EFF6FF;
+      border-color: #BFDBFE;
+      color: var(--primary);
+    }
+
+    .pricing-card.popular .btn-plan {
+      background: var(--primary-gradient);
+      color: #FFFFFF;
+      border: none;
+      box-shadow: 0 6px 18px rgba(79, 70, 229, 0.28);
+    }
+
+    .pricing-card.popular .btn-plan:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(79, 70, 229, 0.38);
+      color: #FFFFFF;
+    }
+
+    /* ========== 用户口碑评价 ========== */
+    .testimonials-section {
+      padding: 85px 0;
+      border-top: 1px solid var(--border-color);
+      background: #F8FAFC;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 30px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .testimonial-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .testimonial-stars {
+      color: #F59E0B;
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-card p {
+      color: var(--text-muted);
+      font-size: 0.94rem;
+      line-height: 1.65;
+      margin-bottom: 22px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar-placeholder {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    .author-info h4 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .author-info span {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+    }
+
+    /* ========== 常见问题解答 (FAQ) ========== */
+    .faq-section {
+      padding: 85px 0;
+      border-top: 1px solid var(--border-color);
+      background: #FFFFFF;
+    }
+
+    .faq-list {
+      max-width: 820px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    details.faq-item {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+    }
+
+    details.faq-item[open] {
+      border-color: #93C5FD;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+    }
+
+    summary.faq-question {
+      padding: 20px 24px;
+      font-size: 1.05rem;
+      font-weight: 650;
+      color: var(--text-main);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      list-style: none;
+    }
+
+    summary.faq-question::-webkit-details-marker {
+      display: none;
+    }
+
+    summary.faq-question::after {
+      content: "+";
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--text-dim);
+      transition: transform 0.25s ease;
+    }
+
+    details.faq-item[open] summary.faq-question::after {
+      content: "−";
+      color: var(--primary);
+    }
+
+    .faq-answer {
+      padding: 0 24px 22px 24px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.68;
+      border-top: 1px solid #F1F5F9;
+      padding-top: 14px;
+    }
+
+    /* ========== 底部大 CTA 横幅 ========== */
+    .cta-banner {
+      padding: 60px 0;
+      border-top: 1px solid var(--border-color);
+      background: #F8FAFC;
+    }
+
+    .cta-banner-card {
+      background: linear-gradient(135deg, #EFF6FF 0%, #EEF2FF 50%, #F5F3FF 100%);
+      border: 1px solid #BFDBFE;
+      border-radius: var(--radius-lg);
+      padding: 60px 30px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+
+    .cta-banner-card h2 {
+      font-size: 2.2rem;
+      font-weight: 850;
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
+
+    .cta-banner-card p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin: 0 auto 32px;
+    }
+
+    /* ========== 页脚 (严格规范) ========== */
+    .footer {
+      border-top: 1px solid var(--border-color);
+      padding: 44px 0;
+      background: #F1F5F9;
+      text-align: center;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      margin-bottom: 22px;
+      list-style: none;
+    }
+
+    .footer-nav a {
+      color: var(--text-dim);
+      font-size: 0.94rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .footer-nav a:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    .footer-copy {
+      font-size: 0.84rem;
+      color: var(--text-dim);
+    }
+
+    /* ========== 移动端响应式 (@media) ========== */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 2.75rem;
+      }
+      .features-grid,
+      .pricing-grid,
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .showcase-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header .nav-links {
+        display: none;
+      }
+      .nav-wrapper {
+        height: 64px;
+      }
+      .hero {
+        padding: 50px 0 40px;
+      }
+      .hero h1 {
+        font-size: 2.1rem;
+        line-height: 1.25;
+      }
+      .hero p {
+        font-size: 1rem;
+        margin-bottom: 28px;
+      }
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+      }
+      .btn-primary,
+      .btn-outline {
+        width: 100%;
+        min-height: 48px;
+        font-size: 1rem;
+      }
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .features-grid,
+      .pricing-grid,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      .pricing-card.popular {
+        order: -1;
+      }
+      .footer-nav {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .cta-banner-card {
+        padding: 40px 20px;
+      }
+      .cta-banner-card h2 {
+        font-size: 1.7rem;
+      }
+    }
+
+    /* ========== 高科技动态背景与极光特效 (AI Cyber Dynamics) ========== */
+    #tech-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.85;
+    }
+
+    .cyber-ambient-glow {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(85px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.45;
+      animation: floatAura 22s infinite ease-in-out alternate;
+    }
+    .glow-1 {
+      top: -8%;
+      left: 15%;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.22) 0%, rgba(99, 102, 241, 0.08) 50%, transparent 70%);
+      animation-duration: 18s;
+    }
+    .glow-2 {
+      top: 42%;
+      right: -8%;
+      width: 750px;
+      height: 750px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, rgba(236, 72, 153, 0.06) 50%, transparent 70%);
+      animation-duration: 25s;
+      animation-delay: -6s;
+    }
+    .glow-3 {
+      bottom: 6%;
+      left: 4%;
+      width: 580px;
+      height: 580px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(59, 130, 246, 0.06) 50%, transparent 70%);
+      animation-duration: 20s;
+      animation-delay: -11s;
+    }
+    @keyframes floatAura {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(60px, 35px) scale(1.12); }
+      100% { transform: translate(-40px, -50px) scale(0.92); }
+    }
+
+    /* 保证所有主要内容层位于动态特效上方，且拥有高档毛玻璃半透明层次 */
+    .header, .hero, .pricing-section, .features-section, .showcase-section, .testimonials-section, .faq-section, .cta-banner, .footer {
+      position: relative;
+      z-index: 1;
+    }
+    .pricing-section {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .features-section {
+      background: rgba(248, 250, 252, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .showcase-section {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .testimonials-section {
+      background: rgba(248, 250, 252, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .faq-section {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 高科技动态数字网络背景 (Canvas + 极光光斑) -->
+  <div class="cyber-ambient-glow glow-1"></div>
+  <div class="cyber-ambient-glow glow-2"></div>
+  <div class="cyber-ambient-glow glow-3"></div>
+  <canvas id="tech-canvas"></canvas>
+
+  <!-- 顶部导航栏 -->
+  <header class="header">
+    <div class="container nav-wrapper">
+      <a href="/" class="logo">
+        OuO
+        <span class="logo-badge">极速专线</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#pricing">套餐价格</a></li>
+        <li><a href="#features">核心优势</a></li>
+        <li><a href="#showcase">多媒体支持</a></li>
+        <li><a href="#testimonials">用户评价</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a href="consult-f8a3.html" target="_blank">推荐咨询</a></li>
+      </ul>
+      <a href="https://koolykh88.flashleapaff.com/#/?code=6kHcdCND" class="nav-cta" rel="nofollow" target="_blank">立即注册</a>
+    </div>
+  </header>
+
+  <!-- 主视觉区 (Hero) -->
+  <section class="hero">
+    <div class="hero-bg-glow"></div>
+    <div class="container">
+      <div class="hero-pill">
+        <span class="hero-pill-dot"></span>
+        全节点已接入 2026 新一代企业级 IPLC/IEPL 内网专线
+      </div>
+      <h1>OuO 专线加速 · 极速畅联全球<span>数字新视界</span></h1>
+      <p>专为跨国办公、4K/8K 极清流媒体及前沿 AI 生产力工具量身定制的高速专线加速服务。全天候高带宽保障，晚高峰绝不拥堵。</p>
+      
+      <div class="hero-actions">
+        <a href="https://koolykh88.flashleapaff.com/#/?code=6kHcdCND" class="btn-primary" rel="nofollow" target="_blank">立即开启极速体验 →</a>
+        <a href="https://jichanglink.com" class="btn-primary" target="_blank">2026年机场推荐</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <h3>&lt; 30ms</h3>
+          <p>核心专线超低延迟</p>
+        </div>
+        <div class="stat-item">
+          <h3>99.99%</h3>
+          <p>SLA 服务高可用保障</p>
+        </div>
+        <div class="stat-item">
+          <h3>8K 极清</h3>
+          <p>超大带宽无缓冲播放</p>
+        </div>
+        <div class="stat-item">
+          <h3>零日志</h3>
+          <p>严格恪守无痕隐私承诺</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. 套餐价格对比表 -->
+  <section id="pricing" class="pricing-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>透明实惠的高性价比方案</h2>
+        <p>按需随心选择，随时升降级，支持全天候售后技术保障。</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- 基础入门版 -->
+        <div class="pricing-card">
+          <div>
+            <div class="plan-header">
+              <div class="plan-name">基础轻量版</div>
+              <div class="plan-desc">适合轻度办公、网页浏览与日常学术检索</div>
+            </div>
+            <div class="plan-price">
+              <span class="currency">¥</span>
+              <span class="amount">19.9</span>
+              <span class="period">/ 月</span>
+            </div>
+            <ul class="plan-features">
+              <li><span class="check">✓</span> <strong>100 GB</strong> 高速流量 / 月</li>
+              <li><span class="check">✓</span> 最高 300 Mbps 突发带宽</li>
+              <li><span class="check">✓</span> 支持 3 台设备同时在线</li>
+              <li><span class="check">✓</span> 优质 BGP 国际隧道中继</li>
+              <li><span class="check">✓</span> 基础 4K 流媒体解锁 (1.0x 节点倍率)</li>
+              <li><span class="check">✓</span> 7x12h 工单客服支持</li>
+            </ul>
+          </div>
+          <a href="https://koolykh88.flashleapaff.com/#/?code=6kHcdCND" class="btn-plan" rel="nofollow" target="_blank">立即开通</a>
+        </div>
+
+        <!-- 旗舰热门版 -->
+        <div class="pricing-card popular">
+          <div class="popular-tag">🔥 极力推荐 · 85% 用户的选择</div>
+          <div>
+            <div class="plan-header">
+              <div class="plan-name">旗舰进阶版</div>
+              <div class="plan-desc">专为开发者、AI 深度用户与流媒体爱好者打造</div>
+            </div>
+            <div class="plan-price">
+              <span class="currency">¥</span>
+              <span class="amount">56.8</span>
+              <span class="period">/ 季 (折合 18.9/月)</span>
+            </div>
+            <ul class="plan-features">
+              <li><span class="check">✓</span> <strong>400 GB</strong> 高速 IPLC 内网专线 / 季</li>
+              <li><span class="check">✓</span> 最高 1000 Mbps 千兆独享带宽</li>
+              <li><span class="check">✓</span> 支持 5 台设备多端并发</li>
+              <li><span class="check">✓</span> <strong>深港/沪日 IPLC 专线 (0 丢包)</strong></li>
+              <li><span class="check">✓</span> <strong>全节点 AI (ChatGPT/Claude) 纯净住宅 IP</strong></li>
+              <li><span class="check">✓</span> <strong>8K 极清流媒体原生库解锁</strong></li>
+              <li><span class="check">✓</span> 晚高峰优先 QOS 带宽保障</li>
+            </ul>
+          </div>
+          <a href="https://koolykh88.flashleapaff.com/#/?code=6kHcdCND" class="btn-plan" rel="nofollow" target="_blank">立即购买 (尊享特惠)</a>
+        </div>
+
+        <!-- 尊享年度版 -->
+        <div class="pricing-card">
+          <div>
+            <div class="plan-header">
+              <div class="plan-name">尊享企业年度版</div>
+              <div class="plan-desc">企业出海、跨国团队及重度数据传输首选</div>
+            </div>
+            <div class="plan-price">
+              <span class="currency">¥</span>
+              <span class="amount">188.0</span>
+              <span class="period">/ 年 (立省 30% · 超值)</span>
+            </div>
+            <ul class="plan-features">
+              <li><span class="check">✓</span> <strong>1800 GB</strong> 专用高速流量 / 年</li>
+              <li><span class="check">✓</span> 2.5 Gbps 极速专线吞吐峰值</li>
+              <li><span class="check">✓</span> 不限制设备并发连接数</li>
+              <li><span class="check">✓</span> <strong>独享 IEPL/IPLC 最高优先级物理隧道</strong></li>
+              <li><span class="check">✓</span> <strong>专属商用原生双 ISP 住宅出口</strong></li>
+              <li><span class="check">✓</span> 7x24h 1对1 绿色通道极速响应</li>
+            </ul>
+          </div>
+          <a href="https://koolykh88.flashleapaff.com/#/?code=6kHcdCND" class="btn-plan" rel="nofollow" target="_blank">立即选购年度版</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. 产品核心优势 -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>为什么全球用户信赖 OuO</h2>
+        <p>摆脱频繁断连与降速烦恼，用专业技术带来无缝衔接的畅快网络体验。</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>IPLC/IEPL 独享专线</h3>
+          <p>采用企业级端对端内网隧道直连，不走公网国际出口，彻底告别晚高峰丢包与大幅度网络抖动。</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3>AI 生产力全绿灯</h3>
+          <p>针对 ChatGPT、Claude、Midjourney 及 Gemini 专属优化，原生纯净住宅 IP，杜绝任何限制与封号风险。</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🎬</div>
+          <h3>4K/8K 流媒体极速秒开</h3>
+          <p>全面解锁 Netflix、Disney+、YouTube、TikTok 原生流媒体库，高码率拖动进度条零等待。</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>军工级数据加密</h3>
+          <p>端到端高强度 AES-256 加密传输协议，隐藏您的真实 IP 地址，在公共 Wi-Fi 下也能高枕无忧。</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>全平台客户端覆盖</h3>
+          <p>完美支持 Windows、macOS、iOS、Android、Linux 及 OpenWrt 软路由，一键扫码轻松配置。</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3>智能分流与负载自愈</h3>
+          <p>内置规则智能识别国内与海外流量，国内直连不耗速；节点毫秒级故障自动转移，办公游戏不断线。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 多媒体与 AI 支持专区 -->
+  <section id="showcase" class="showcase-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>赋能全球顶级内容与生产力生态</h2>
+        <p>一键打通海外核心平台，释放您的灵感与娱乐潜能。</p>
+      </div>
+
+      <div class="showcase-container">
+        <!-- AI 模块 -->
+        <div class="showcase-box">
+          <div>
+            <h3>主流 AI 生产力无阻直连</h3>
+            <p>告别“Access Denied”与频繁验证码，纯净机房与住宅网络让您随时随地畅享智能赋能。</p>
+            <div class="badge-cloud">
+              <span class="app-badge">🤖 ChatGPT (OpenAI)</span>
+              <span class="app-badge">🧠 Claude 3.5 / 3.7</span>
+              <span class="app-badge">🎨 Midjourney</span>
+              <span class="app-badge">✨ Google Gemini</span>
+              <span class="app-badge">💻 GitHub Copilot</span>
+              <span class="app-badge">🔍 Perplexity AI</span>
+            </div>
+            <ul class="showcase-feature-list">
+              <li>专属高纯度 IP 分配，API 接口高并发稳定响应</li>
+              <li>完美支持 GPT-4o 实时语音与深度视觉多模态交互</li>
+              <li>零限制访问 Claude Artifacts 与 Code Interpreter</li>
+            </ul>
+          </div>
+          <a href="https://koolykh88.flashleapaff.com/#/?code=6kHcdCND" class="btn-plan" rel="nofollow" target="_blank">开通 AI 极速通道 →</a>
+        </div>
+
+        <!-- 流媒体模块 -->
+        <div class="showcase-box">
+          <div>
+            <h3>4K/8K 影音全球剧库原生解锁</h3>
+            <p>独享大带宽直连节点，原生住宅 IP 解除地区版权锁，沉浸式享受无删减全球影视。</p>
+            <div class="badge-cloud">
+              <span class="app-badge">🍿 Netflix (网飞)</span>
+              <span class="app-badge">📺 YouTube 8K</span>
+              <span class="app-badge">🏰 Disney+</span>
+              <span class="app-badge">🎵 Spotify</span>
+              <span class="app-badge">🎬 HBO Max</span>
+              <span class="app-badge">📱 TikTok 全球版</span>
+            </div>
+            <ul class="showcase-feature-list">
+              <li>超大带宽冗余，8K HDR 码率拖拽秒级响应</li>
+              <li>多地区节点自由切换（美、日、港、台、新、英等）</li>
+              <li>跨境电商直播不掉帧，TikTok 运营高清流畅</li>
+            </ul>
+          </div>
+          <a href="https://koolykh88.flashleapaff.com/#/?code=6kHcdCND" class="btn-plan" rel="nofollow" target="_blank">畅享极清影音 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 用户口碑与意见反馈 -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>来自各领域真实用户的口碑与意见</h2>
+        <p>已有数万名创作者、开发者与跨国企业员工通过 OuO 实现了稳定无忧的网络加速。</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>“之前用其他服务经常被 OpenAI 拦截报 1020 错误。换了 OuO 的 IPLC 专线后，Claude 和 ChatGPT 响应快到惊人，连续用几个月从没掉线，极度推荐给开发者！”</p>
+          <div class="testimonial-author">
+            <div class="avatar-placeholder">张</div>
+            <div class="author-info">
+              <h4>张先生</h4>
+              <span>全栈工程师 / AI 开发者</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>“晚八点黄金档在电视上看 Netflix 和 YouTube 4K 简直是享受，拖拽进度条完全不用缓冲。全家人的手机和电视都能同时连，性价比无敌。”</p>
+          <div class="testimonial-author">
+            <div class="avatar-placeholder">李</div>
+            <div class="author-info">
+              <h4>李先生</h4>
+              <span>数码博主 & 影音爱好者</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>“做跨境电商最怕 IP 不纯导致店铺账号受限。OuO 的原生住宅节点质量非常高，TikTok 视频高清上传、数据分析后台秒开，帮我们团队节省了大把时间。”</p>
+          <div class="testimonial-author">
+            <div class="avatar-placeholder">陈</div>
+            <div class="author-info">
+              <h4>陈女士</h4>
+              <span>跨境电商独立站运营总监</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 常见问题解答 -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="section-head">
+        <h2>常见问题解答</h2>
+        <p>为您解答关于配置、节点与使用的核心疑问。</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary class="faq-question">OuO 支持在哪些操作系统和设备上使用？</summary>
+          <div class="faq-answer">
+            OuO 完美兼容市面上所有主流平台，包括 Windows、macOS (Intel 与 Apple Silicon M芯片)、iOS / iPadOS、Android、Linux 以及 OpenWrt 路由器。购买后后台提供各大平台一键导入订阅教程，新手 1 分钟内即可上手完成配置。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">网络晚高峰（如 20:00 - 23:00）会出现卡顿或丢包吗？</summary>
+          <div class="faq-answer">
+            不会。普通代理多采用公共骨干网，易受晚高峰拥堵影响；而 OuO 采用全内网企业级 IPLC/IEPL 专线，物理专线点对点直连，晚高峰时刻带宽充足，无拥堵、低丢包，全天候保持流畅。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">是否支持 ChatGPT、Claude 以及各大海外流媒体？</summary>
+          <div class="faq-answer">
+            完全支持！我们的节点专门部署了干净纯正的住宅 IP 与企业出口，深度适配 ChatGPT Plus、Claude 3.7、Midjourney、Netflix、Disney+、YouTube 及 TikTok 等平台，有效规避各类反作弊及区域锁定拦截。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">你们会记录我的浏览历史或上网日志吗？</summary>
+          <div class="faq-answer">
+            绝不。我们严格奉行“零日志（No-Log）”隐私政策。我们的服务器运行在纯内存（RAM-only）无盘环境中，不记录、不追踪、不储存任何用户的 IP 地址、浏览历史、传输数据或 DNS 查询记录。
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">如果购买后遇到配置问题，如何获取支持？</summary>
+          <div class="faq-answer">
+            登录用户中心即可随时提交工单，技术客服支持团队全天候在线协助排查；同时后台还附带极其详尽的图文新手教学与客户端下载指南。
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部 CTA 横幅 -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-banner-card">
+        <h2>即刻开启专属的全球极速网络</h2>
+        <p>加入数万名高效率用户的选择，告别卡顿与封锁，畅享丝滑的互联体验。</p>
+        <a href="https://koolykh88.flashleapaff.com/#/?code=6kHcdCND" class="btn-primary" rel="nofollow" target="_blank">立即注册使用 OuO →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 规范页脚 (严格保留四个指定标题，新窗口打开) -->
+  <footer class="footer">
+    <div class="container">
+      <ul class="footer-nav">
+        <li><a href="sitemap.html" target="_blank">网站地图</a></li>
+        <li><a href="about.html" target="_blank">关于我们</a></li>
+        <li><a href="terms.html" target="_blank">服务条款</a></li>
+        <li><a href="privacy.html" target="_blank">隐私政策</a></li>
+      </ul>
+      <div class="footer-copy">
+        &copy; 2026 OuO. All rights reserved. 专为高性能全球互联与隐私加速打造。
+      </div>
+    </div>
+  </footer>
+
+  <!-- 高性能原生高科技动态背景引擎 (60FPS 全球专线拓扑仿真) -->
+  <script>
+    (function() {
+      const canvas = document.getElementById('tech-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let width = window.innerWidth;
+      let height = window.innerHeight;
+
+      function setSize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        ctx.scale(dpr, dpr);
+      }
+      setSize();
+      window.addEventListener('resize', setSize, { passive: true });
+
+      const isMobile = width < 768;
+      const NODE_COUNT = isMobile ? 36 : 76;
+      const MAX_DIST = isMobile ? 125 : 165;
+      const MAX_DIST_SQ = MAX_DIST * MAX_DIST;
+
+      const mouse = { x: -9999, y: -9999, active: false };
+      window.addEventListener('mousemove', function(e) {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+        mouse.active = true;
+      }, { passive: true });
+      window.addEventListener('mouseleave', function() {
+        mouse.active = false;
+      }, { passive: true });
+
+      // 智能网络节点
+      class NetworkNode {
+        constructor() {
+          this.reset(true);
+        }
+        reset(randomPos) {
+          this.x = randomPos ? Math.random() * width : (Math.random() > 0.5 ? 0 : width);
+          this.y = randomPos ? Math.random() * height : Math.random() * height;
+          this.vx = (Math.random() - 0.5) * 0.7;
+          this.vy = (Math.random() - 0.5) * 0.7;
+          this.radius = Math.random() * 2 + 1.8;
+          this.baseAlpha = Math.random() * 0.35 + 0.45;
+          this.pulsePhase = Math.random() * Math.PI * 2;
+          this.pulseSpeed = 0.03 + Math.random() * 0.02;
+          this.colorType = Math.random() > 0.4 ? 'blue' : 'indigo';
+          this.rippleRadius = 0;
+          this.rippleAlpha = 0;
+        }
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          this.pulsePhase += this.pulseSpeed;
+
+          // 边缘平滑反弹
+          if (this.x < 0 || this.x > width) this.vx *= -1;
+          if (this.y < 0 || this.y > height) this.vy *= -1;
+
+          // 鼠标近距离磁性微交互
+          if (mouse.active) {
+            const dx = this.x - mouse.x;
+            const dy = this.y - mouse.y;
+            const distSq = dx * dx + dy * dy;
+            if (distSq < 22500 && distSq > 0) {
+              const force = (150 - Math.sqrt(distSq)) / 150;
+              this.x += (dx / Math.sqrt(distSq)) * force * 1.5;
+              this.y += (dy / Math.sqrt(distSq)) * force * 1.5;
+            }
+          }
+
+          if (this.rippleAlpha > 0.02) {
+            this.rippleRadius += 0.85;
+            this.rippleAlpha *= 0.94;
+          }
+        }
+        triggerRipple() {
+          this.rippleRadius = this.radius;
+          this.rippleAlpha = 0.65;
+        }
+        draw() {
+          const pulse = Math.sin(this.pulsePhase) * 0.25 + 0.75;
+          const r = this.radius * pulse;
+          
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, r, 0, Math.PI * 2);
+          ctx.fillStyle = this.colorType === 'blue'
+            ? 'rgba(37, 99, 235, ' + (this.baseAlpha * pulse) + ')'
+            : 'rgba(99, 102, 241, ' + (this.baseAlpha * pulse) + ')';
+          ctx.fill();
+
+          // 核心骨干节点辐射光晕
+          if (this.radius > 2.6) {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, r * 2.8, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(59, 130, 246, 0.08)';
+            ctx.fill();
+          }
+
+          // 数据包送达时引发的节点脉冲光环
+          if (this.rippleAlpha > 0.02) {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.rippleRadius, 0, Math.PI * 2);
+            ctx.strokeStyle = 'rgba(56, 189, 248, ' + this.rippleAlpha + ')';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
+        }
+      }
+
+      const nodes = [];
+      for (let i = 0; i < NODE_COUNT; i++) {
+        nodes.push(new NetworkNode());
+      }
+
+      // 高速流动的数据包 (模拟 IPLC 专线高频数据流传输)
+      class DataPacket {
+        constructor() {
+          this.reset();
+        }
+        reset() {
+          this.source = nodes[Math.floor(Math.random() * nodes.length)];
+          this.target = null;
+          // 寻找最近的关联节点
+          for (let i = 0; i < nodes.length; i++) {
+            if (nodes[i] !== this.source) {
+              const dx = nodes[i].x - this.source.x;
+              const dy = nodes[i].y - this.source.y;
+              if (dx * dx + dy * dy < MAX_DIST_SQ) {
+                this.target = nodes[i];
+                break;
+              }
+            }
+          }
+          this.progress = 0;
+          this.speed = 0.012 + Math.random() * 0.018;
+          this.color = Math.random() > 0.5 ? 'rgba(16, 185, 129, 0.95)' : 'rgba(56, 189, 248, 0.95)';
+        }
+        update() {
+          if (!this.target) {
+            this.reset();
+            return;
+          }
+          this.progress += this.speed;
+          if (this.progress >= 1) {
+            this.target.triggerRipple();
+            this.reset();
+          }
+        }
+        draw() {
+          if (!this.target) return;
+          const px = this.source.x + (this.target.x - this.source.x) * this.progress;
+          const py = this.source.y + (this.target.y - this.source.y) * this.progress;
+
+          ctx.beginPath();
+          ctx.arc(px, py, 2.2, 0, Math.PI * 2);
+          ctx.fillStyle = this.color;
+          ctx.shadowColor = this.color;
+          ctx.shadowBlur = 8;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+      }
+
+      const PACKET_COUNT = isMobile ? 12 : 28;
+      const packets = [];
+      for (let i = 0; i < PACKET_COUNT; i++) {
+        packets.push(new DataPacket());
+      }
+
+      // 动画主循环 (后台标签自动休眠保障性能)
+      let isVisible = true;
+      document.addEventListener('visibilitychange', function() {
+        isVisible = !document.hidden;
+      });
+
+      function animate() {
+        if (!isVisible) {
+          requestAnimationFrame(animate);
+          return;
+        }
+        ctx.clearRect(0, 0, width, height);
+
+        // 更新与绘制节点
+        for (let i = 0; i < nodes.length; i++) {
+          nodes[i].update();
+          nodes[i].draw();
+        }
+
+        // 绘制光纤中继连接线
+        for (let i = 0; i < nodes.length; i++) {
+          const na = nodes[i];
+          for (let j = i + 1; j < nodes.length; j++) {
+            const nb = nodes[j];
+            const dx = na.x - nb.x;
+            const dy = na.y - nb.y;
+            const distSq = dx * dx + dy * dy;
+
+            if (distSq < MAX_DIST_SQ) {
+              const alpha = (1 - Math.sqrt(distSq) / MAX_DIST) * 0.32;
+              ctx.beginPath();
+              ctx.moveTo(na.x, na.y);
+              ctx.lineTo(nb.x, nb.y);
+              ctx.strokeStyle = 'rgba(59, 130, 246, ' + alpha + ')';
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+
+        // 更新与绘制流动数据包
+        for (let i = 0; i < packets.length; i++) {
+          packets[i].update();
+          packets[i].draw();
+        }
+
+        requestAnimationFrame(animate);
+      }
+      requestAnimationFrame(animate);
+    })();
+  </script>
+
+</body>
+</html>
