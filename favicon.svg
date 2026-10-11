@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <defs>
+    <!-- 主体 O 环蓝紫渐变 -->
+    <linearGradient id="o-ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB"/>
+      <stop offset="50%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <!-- 光流光晕渐变 -->
+    <linearGradient id="o-glow-grad" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+    <filter id="o-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#2563EB" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+  <!-- 高质感柔和圆角底衬 (确保在浏览器标签页任意深浅主题下均清晰显眼) -->
+  <rect width="64" height="64" rx="16" fill="#FFFFFF"/>
+  <rect width="62" height="62" x="1" y="1" rx="15" stroke="#E2E8F0" stroke-width="1.2"/>
+  <!-- 辅助科技细环 -->
+  <circle cx="32" cy="32" r="26" stroke="#DBEAFE" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <!-- 主体 O 字母环形 (饱满圆润、高辨识度) -->
+  <circle cx="32" cy="32" r="19" stroke="url(#o-ring-grad)" stroke-width="7" filter="url(#o-shadow)"/>
+  <!-- 顶部高速冲刺光纤弧 -->
+  <path d="M 18.5 18 A 19 19 0 0 1 45.5 18" stroke="url(#o-glow-grad)" stroke-width="7" stroke-linecap="round"/>
+  <!-- 极速能量光子亮点 -->
+  <circle cx="45.5" cy="18" r="4" fill="#FFFFFF"/>
+  <circle cx="45.5" cy="18" r="2" fill="#06B6D4"/>
+  <!-- 中心科技微核 -->
+  <circle cx="32" cy="32" r="3.5" fill="url(#o-ring-grad)"/>
+</svg>

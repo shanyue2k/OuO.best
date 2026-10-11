@@ -9,6 +9,7 @@
   <meta name="description" content="OuO 为您打造巅峰极速的企业级专线网络加速体验。全节点覆盖香港、新加坡、美日等优质 IPLC 节点，完美适配 Chrome、Edge 等各平台浏览器。作为 2026 备受青睐的机场推荐首选与高安全 VPN 替代方案，原生支持 ChatGPT、Claude AI 及 4K/8K 流媒体，零日志守护隐私，秒开全球网络！">
   <meta name="keywords" content="OuO, 巅峰极速, 机场推荐, vpn, 浏览器, 专线加速器, IPLC专线, ChatGPT加速, 4K流媒体解锁, 科学上网, 网络代理">
   <link rel="canonical" href="https://ouo.best/">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <!-- 移动端与社交媒体分享规范 (Open Graph & Twitter Card) -->
   <meta property="og:type" content="website">
@@ -137,9 +138,24 @@
       font-size: 1.75rem;
       font-weight: 800;
       letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+
+    .logo-text {
       background: var(--primary-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      transition: transform 0.25s ease;
+    }
+
+    .logo:hover .logo-icon {
+      transform: rotate(12deg) scale(1.08);
     }
 
     .logo-badge {
@@ -150,7 +166,6 @@
       border: 1px solid #BFDBFE;
       padding: 2px 8px;
       border-radius: 20px;
-      -webkit-text-fill-color: #2563EB;
     }
 
     .nav-links {
@@ -1090,7 +1105,31 @@
   <header class="header">
     <div class="container nav-wrapper">
       <a href="/" class="logo">
-        OuO
+        <svg class="logo-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="OuO Logo">
+          <defs>
+            <linearGradient id="nav-o-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2563EB"/>
+              <stop offset="50%" stop-color="#4F46E5"/>
+              <stop offset="100%" stop-color="#06B6D4"/>
+            </linearGradient>
+            <linearGradient id="nav-spark-grad" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#06B6D4"/>
+              <stop offset="100%" stop-color="#38BDF8"/>
+            </linearGradient>
+            <filter id="nav-o-glow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#2563EB" flood-opacity="0.32"/>
+            </filter>
+          </defs>
+          <rect width="64" height="64" rx="16" fill="#FFFFFF"/>
+          <rect width="62" height="62" x="1" y="1" rx="15" stroke="#E2E8F0" stroke-width="1.2"/>
+          <circle cx="32" cy="32" r="26" stroke="#DBEAFE" stroke-width="1.2" stroke-dasharray="3 3"/>
+          <circle cx="32" cy="32" r="19" stroke="url(#nav-o-grad)" stroke-width="7" filter="url(#nav-o-glow)"/>
+          <path d="M 18.5 18 A 19 19 0 0 1 45.5 18" stroke="url(#nav-spark-grad)" stroke-width="7" stroke-linecap="round"/>
+          <circle cx="45.5" cy="18" r="4" fill="#FFFFFF"/>
+          <circle cx="45.5" cy="18" r="2" fill="#06B6D4"/>
+          <circle cx="32" cy="32" r="3.5" fill="url(#nav-o-grad)"/>
+        </svg>
+        <span class="logo-text">OuO</span>
         <span class="logo-badge">极速专线</span>
       </a>
       <ul class="nav-links">
